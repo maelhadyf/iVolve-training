@@ -1,0 +1,12 @@
+---
+- name: Include tasks for package dependencies
+  include_tasks: dependencies.yml
+
+- name: Include tasks for Jenkins installation
+  include_tasks: jenkins.yml
+
+- name: Include tasks for Docker installation
+  include_tasks: docker.yml
+
+- name: Include tasks for OpenShift CLI installation
+  include_tasks: openshift.yml

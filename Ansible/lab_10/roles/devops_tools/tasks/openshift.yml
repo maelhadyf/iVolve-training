@@ -1,0 +1,30 @@
+---
+- name: Create temporary directory
+  file:
+    path: /tmp/oc-client
+    state: directory
+    mode: '0755'
+
+- name: Download OpenShift CLI
+  get_url:
+    url: "{{ openshift_cli_url }}"
+    dest: "/tmp/oc-client/oc.tar.gz"
+    mode: '0644'
+
+- name: Extract OpenShift CLI
+  unarchive:
+    src: "/tmp/oc-client/oc.tar.gz"
+    dest: "/tmp/oc-client"
+    remote_src: yes
+
+- name: Copy OpenShift CLI to bin directory
+  copy:
+    src: "/tmp/oc-client/oc"
+    dest: "/usr/local/bin/oc"
+    mode: '0755'
+    remote_src: yes
+
+- name: Clean up temporary files
+  file:
+    path: /tmp/oc-client
+    state: absent
