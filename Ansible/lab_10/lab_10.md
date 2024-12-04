@@ -134,7 +134,6 @@ The role includes handlers for:
 ---
 
 ## Verification
-
 After installation, verify the services:
 
 ### Not the easy method
@@ -190,6 +189,26 @@ ansible all -m command -b -a "oc version"
 
 # Check oc binary permissions
 ansible all -m shell -b -a "ls -l /usr/local/bin/oc"
+```
+
+- Combined verification in one-liner:
+```bash
+# Comprehensive check of all tools
+ansible all -m shell -b -a "systemctl status jenkins && docker --version && oc version"
+```
+
+- Check all services status:
+```bash
+ansible all -m shell -b -a '
+echo "=== JENKINS STATUS ==="
+systemctl status jenkins
+echo -e "\n=== DOCKER STATUS ==="
+systemctl status docker
+echo -e "\n=== OPENSHIFT CONNECTIVITY AND STATUS ==="
+oc whoami
+oc status
+oc get nodes
+oc cluster-info'
 ```
 
 ---
