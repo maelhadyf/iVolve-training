@@ -136,6 +136,8 @@ The role includes handlers for:
 ## Verification
 
 After installation, verify the services:
+
+### Not the easy method
 ```bash
 # Check Jenkins status
 systemctl status jenkins
@@ -145,6 +147,49 @@ docker --version
 
 # Verify OpenShift CLI
 oc version
+```
+
+### Ansible ad-hoc commands to verify the installations
+- Verify Jenkins:
+```bash
+# Check Jenkins service status
+ansible all -m service_facts -b | grep jenkins
+
+# Check if Jenkins is running
+ansible all -m shell -b -a "systemctl status jenkins"
+
+# Check Jenkins version and status (once Jenkins is running)
+ansible all -m uri -a "url=http://localhost:8080/api/json return_content=yes" -b
+```
+
+- Verify Docker:
+```bash
+# Check Docker service status
+ansible all -m service_facts -b | grep docker
+
+# Check Docker version
+ansible all -m command -b -a "docker --version"
+
+# Check Docker service status
+ansible all -m shell -b -a "systemctl status docker"
+
+# Verify Docker can run containers
+ansible all -m command -b -a "docker run hello-world"
+
+# Check if user is in Docker group
+ansible all -m shell -b -a "groups ${USER} | grep docker"
+```
+
+- Verify OpenShift CLI:
+```bash
+# Check if oc binary exists
+ansible all -m stat -b -a "path=/usr/local/bin/oc"
+
+# Check oc version
+ansible all -m command -b -a "oc version"
+
+# Check oc binary permissions
+ansible all -m shell -b -a "ls -l /usr/local/bin/oc"
 ```
 
 ---
