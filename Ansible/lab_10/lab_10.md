@@ -1,6 +1,8 @@
 # Lab 10: Organize Ansible playbooks using roles. Create an Ansible role for installing Jenkins, docker, openshift CLI ‘OC’.
 
 ## Project Structure
+
+```
 project_root/
 │
 ├── install_devops_tools.yml          # Main playbook
@@ -22,7 +24,4 @@ project_root/
         │
         └── vars/                     # Variables
             └── main.yml
-
-
-
-
+```
