@@ -24,7 +24,10 @@ This script automates the deployment of a highly available web infrastructure on
 ## Quick Start
 Download the script `setup-web-infrastructure.sh`
 ```bash
+#Make the script executable
 chmod +x setup-web-infrastructure.sh
+
+#Run the script
 ./setup-web-infrastructure.sh
 ```
 
@@ -95,6 +98,18 @@ Automation : Complete infrastructure deployment in a single script
 ### Instance Access :
 - SSH using the key pair specified
 - Check instance security group rules
+
+---
+
+## Cleanup
+To remove all created resources:
+```bash
+#Make the script executable
+chmod +x cleanup-web-infrastructure.sh
+
+#Run the script
+./cleanup-web-infrastructure.sh
+```
 
 ---
 
