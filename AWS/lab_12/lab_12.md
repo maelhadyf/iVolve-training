@@ -4,6 +4,8 @@
 
 A comprehensive Bash script for setting up AWS IAM users, groups, and billing alerts.
 
+---
+
 ## Features
 
 ### IAM Setup
@@ -28,11 +30,15 @@ A comprehensive Bash script for setting up AWS IAM users, groups, and billing al
 - CloudWatch metrics integration
 - SNS topic for alerts
 
+---
+
 ## Prerequisites
 - AWS CLI installed and configured
 - AWS account with administrative access
 - Bash shell environment
 - Virtual MFA device (Google Authenticator or similar)
+
+---
 
 ## Usage
 Download the script `setup_lab12.sh`
@@ -48,6 +54,8 @@ chmod +x setup_lab12.sh
   - Scan MFA QR code
   - Provide two consecutive MFA codes
 
+---
+
 ## Cleanup
 To remove all created resources:
 ```bash
@@ -57,6 +65,8 @@ chmod +x cleanup_lab14.sh
 #Run the script
 ./cleanup_lab14.sh
 ```
+
+---
 
 ## Configuration Details
 
@@ -98,6 +108,8 @@ After completing the setup, the following immediate actions and security best pr
 - **Monitor billing alerts**: Regularly check AWS billing alarms to ensure there are no unexpected charges.
 - **Review group memberships**: Periodically review IAM group memberships to ensure users have appropriate access.
 - **Keep MFA device secure**: Ensure that MFA devices are stored securely and are not shared.
+
+---
 
 ### Script Output
 
