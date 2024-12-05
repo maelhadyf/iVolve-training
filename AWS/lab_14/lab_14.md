@@ -22,13 +22,13 @@ This script automates the deployment of a highly available web infrastructure on
 ---
 
 ## Quick Start
-Download the script `setup-web-infrastructure.sh`
+Download the script `setup_lab14.sh`
 ```bash
 #Make the script executable
-chmod +x setup-web-infrastructure.sh
+chmod +x setup_lab14.sh
 
 #Run the script
-./setup-web-infrastructure.sh
+./setup_lab14.sh
 ```
 
 ---
@@ -105,10 +105,10 @@ Automation : Complete infrastructure deployment in a single script
 To remove all created resources:
 ```bash
 #Make the script executable
-chmod +x cleanup-web-infrastructure.sh
+chmod +x cleanup_lab14.sh
 
 #Run the script
-./cleanup-web-infrastructure.sh
+./cleanup_lab14.sh
 ```
 
 ---
