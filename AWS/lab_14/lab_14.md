@@ -33,6 +33,18 @@ chmod +x setup_lab14.sh
 
 ---
 
+## Cleanup
+To remove all created resources:
+```bash
+#Make the script executable
+chmod +x cleanup_lab14.sh
+
+#Run the script
+./cleanup_lab14.sh
+```
+
+---
+
 ## Configuration
 Default settings in the script:
 - Region: us-east-1
@@ -98,18 +110,6 @@ Automation : Complete infrastructure deployment in a single script
 ### Instance Access :
 - SSH using the key pair specified
 - Check instance security group rules
-
----
-
-## Cleanup
-To remove all created resources:
-```bash
-#Make the script executable
-chmod +x cleanup_lab14.sh
-
-#Run the script
-./cleanup_lab14.sh
-```
 
 ---
 
