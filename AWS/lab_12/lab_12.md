@@ -95,14 +95,14 @@ A billing alarm has been set up to monitor AWS costs. The following configuratio
 
 After completing the setup, the following immediate actions and security best practices should be followed:
 
-#### Immediate Actions
+1. **Immediate Actions** 🚀
 
 - **Confirm SNS subscription via email**: Ensure that the SNS subscription for billing alerts is confirmed.
 - **Change temporary passwords**: All newly created users should change their temporary passwords.
 - **Store access keys securely**: Store access keys in a secure location, such as a password manager.
 - **Test MFA login**: Verify that MFA is enabled and functional for users who require it.
 
-#### Security Best Practices
+2. **Security Best Practices** 🛡️
 
 - **Rotate access keys regularly**: Rotate programmatic access keys every 90 days or as needed.
 - **Monitor billing alerts**: Regularly check AWS billing alarms to ensure there are no unexpected charges.
