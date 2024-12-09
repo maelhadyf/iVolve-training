@@ -7,6 +7,8 @@ create_before_destroy = true
 ignore_changes        = [tags]
 replace_triggered_by  = [aws_security_group.example.id]
 
+![2024-12-09_13-36](https://github.com/user-attachments/assets/bddd0609-35ac-4676-9f25-12024f8b1fa0)
+
 ---
 
 # Lifecycle Rules
