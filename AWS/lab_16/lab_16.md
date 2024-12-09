@@ -2,6 +2,9 @@
 
 Automate your AWS serverless API deployment with a single script! 
 
+![2024-12-09_13-41](https://github.com/user-attachments/assets/deb3a0c6-bb5e-4a95-a4a2-e6f4a90cbad3)
+
+
 ## 🎯 Overview
 
 This magical script sets up your complete serverless infrastructure:
