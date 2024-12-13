@@ -2,15 +2,20 @@
 ## Visit this link for lab 22,23 code and explanation
 https://github.com/maelhadyf/Jenkins_Pipeline_OC_Flask_App
 
+---
+
 ## lab 24
 ## Visit this link for lab 24 code and explanation
 https://github.com/maelhadyf/Jenkins_Pipeline_OC_Flask_App/tree/shared-libraries
 
+---
+
 ## lab 25
 ### Install the Role-Based Authorization Strategy Plugin
 
-
-
+---
+---
+---
 
 ### Lab 22: Jenkins Installation
 Objective: Install Jenkins
