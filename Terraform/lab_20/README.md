@@ -6,7 +6,8 @@ Create the VPC manually then make terraform manage it ‘Terraform import’.
 Output public ip and private ip of EC2s.
 
 ---
-- Create the VPC manually and capture its ID
+### 1- clone this project
+### 2- Create the VPC manually and capture its ID
 ```bash
 # Create VPC and capture its ID
 VPC_ID=$(aws ec2 create-vpc \
@@ -31,10 +32,26 @@ aws ec2 modify-vpc-attribute \
 # Print the VPC ID
 echo "VPC ID: $VPC_ID"
 ```
-
-- Import the existing VPC into Terraform state using the VPC ID:
+### 3. Initialize Terraform
+```bash
+terraform init
+```
+### 4- Edit `terraform.tfvars` file
+```hcl
+vpc_id       = "vpc-002c3133857d32efb"    # Replace with your manually created VPC ID
+ssh_key_name = "amazon"   # Replace with your key name
+```
+### 5- Import the existing VPC into Terraform state using the VPC ID
 ```bash
 terraform import aws_vpc.imported_vpc < your-vpc-id >
+```
+### 6. Review the plan
+```bash
+terraform plan
+```
+### 7. Apply the configuration
+```bash
+terraform apply
 ```
 
 ---
