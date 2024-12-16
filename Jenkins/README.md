@@ -14,6 +14,11 @@ https://github.com/maelhadyf/Jenkins_Pipeline_OC_Flask_App/tree/shared-libraries
 ### Install the Role-Based Authorization Strategy Plugin
 
 ---
+
+## lab 26
+## Visit this link for lab 26 code and explanation
+https://github.com/maelhadyf/Jenkins_Slave_Minikube_App
+---
 ---
 ---
 
@@ -36,3 +41,9 @@ Objective: Implement shared libraries in Jenkins to reuse code across multiple p
 ### Lab 25: Role-based Authorization 
 Objective: Create user1 and user2.
 Assign admin role for user1 & read-only role for user2.
+
+Lab 26: MultiBranch Pipeline Project
+Create 3 namespaces in you K8S environment.
+Create a Multibranch pipeline to automate the deployment in the namespace based on GitHub branch.
+Create Jenkins slave to run this pipeline
+Use github webhooks to trigger the pipeline
