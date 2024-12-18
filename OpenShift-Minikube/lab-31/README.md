@@ -54,6 +54,7 @@ sudo nano /etc/hosts
 
 ## 6- Verification
 ```bash
+curl http://myapp.local
 
 curl $(minikube ip):<NODEPORT>  #30001
 
@@ -71,4 +72,14 @@ kubectl describe pod <pod-name>
 kubectl logs <pod-name>
 ```
 
+---
+
+## 📄 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## ✍️ Author
+**King Memo**
+
+## 🙏 Thank You!
+Thank you for using this project. Your support and feedback are greatly appreciated!
 
