@@ -56,7 +56,12 @@ sudo nano /etc/hosts
 ```bash
 curl http://myapp.local
 
-curl $(minikube ip):<NODEPORT>  #30001
+#get services
+kubectl get svc
+kubectl get ingress
+
+# Get the Ingress controller IP
+kubectl get ingress nginx-ingress
 
 # Check if the image is available in Minikube's Docker daemon
 eval $(minikube docker-env)
