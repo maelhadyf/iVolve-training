@@ -1,5 +1,33 @@
 
 
+**Ingress**
+consolidate your routing rules into a single resource as it
+can expose multiple services under the same IP address
+
+- Configure multiple paths for same host
+- Configure multiple sub-domains or domains
+- Configure TLS Certificate - https://
+
+**Ingress Controller**
+
+- Evaluates all the rules
+- Manages redirections
+- Entry point to the cluster
+- Many third-party implementations
+- K8s Nginx Ingress Controller
+
+**NetworkPolicies** 
+- handle pod-to-pod communication rules at the network level.
+- are enforced by the Container Network Interface (CNI) plugin in your Kubernetes cluster.
+- Minikube or a basic Kubernetes setup with the default CNI (like kindnet), NetworkPolicies won't work.
+-  if you're using Minikube and want to use NetworkPolicies:
+```bash
+minikube start --cni calico        # calico Common CNI plugins that support NetworkPolicies
+```
+
+---
+
+
 ## 1- Build the Docker image with your Dockerfile:
 ```bash
 docker build -t custom-nginx:latest .
