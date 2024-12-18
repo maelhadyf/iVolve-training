@@ -14,22 +14,6 @@ Make a Comparison between PV, PVC, and StorageClass.
 
 ![image](https://github.com/user-attachments/assets/50e933c5-5bf3-4c45-8560-95c3507e94b9)
 
-
-```
-|                                   **StorageClass**                                  	|                **Persistent Volume (PV)**                	|    **Persistent Volume Claim (PVC)**    	|
-|:-----------------------------------------------------------------------------------:	|:--------------------------------------------------------:	|:---------------------------------------:	|
-| - Acts like a storage template or blueprint                                         	| - The actual storage resource in the cluster             	| - A request for storage by a user/pod   	|
-| - Defines the type and configuration of storage that can be dynamically provisioned 	| - Like a pre-allocated piece of storage                  	| - Acts as a bridge between pods and PVs 	|
-| - Enables automatic creation of Persistent Volumes when needed                      	| - Can be provisioned either:                             	| - Specifies requirements like:          	|
-| - Think of it as a "menu" of available storage options in your cluster              	|   - Statically (manually created by admin)               	|   - How much storage is needed          	|
-|                                                                                     	|   - Dynamically (automatically created via StorageClass) 	|   - What access modes are required      	|
-|                                                                                     	|                                                          	|   - Which StorageClass to use           	|
-| **Here's a simple analogy:**                                                        	|                                                          	|                                         	|
-| - StorageClass is like a hotel room type (e.g., standard, deluxe, suite)            	|                                                          	|                                         	|
-| - PV is like the actual hotel room                                                  	|                                                          	|                                         	|
-| - PVC is like a room reservation
-
-```
 ### StorageClass
 
 - Acts like a storage template or blueprint
@@ -62,8 +46,10 @@ Make a Comparison between PV, PVC, and StorageClass.
 - **PVC** is like a room reservation
 
 ---
+## 🏃‍♂️ Running the script
 
 Save the next script as `nginx-persistence-demo.sh` and run it:
+
 ```bash
 chmod +x nginx-persistence-demo.sh
 ./nginx-persistence-demo.sh
