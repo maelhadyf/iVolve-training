@@ -30,7 +30,7 @@ Update the deployment to use the registry image:
 image: localhost:5000/custom-nginx:latest
 ```
 
-## 3-Enable NGINX Ingress Controller in Minikube:
+## 3- Enable Ingress Controller in Minikube:
 ```bash
 minikube addons enable ingress
 ```
