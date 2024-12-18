@@ -1,4 +1,14 @@
+# Lab 31: Network Configuration
+Build a new image from Dockerfile in https://github.com/IbrahimmAdel/static-website.git  
+Create a deployment using this image  
+Create a service to expose the deployment.  
+Define a network policy that allow traffic to the NGINX pods only from other pods within the same namespace.  
+Enable the NGINX Ingress controller using Minikube addons.  
+Create an Ingress resource.  
+Update /etc/hosts to map the domain to the Minikube IP address.   
+Access the custom NGINX service via the Ingress endpoint using the domain name.  
 
+---
 
 **Ingress**  
 
@@ -20,11 +30,6 @@ can expose multiple services under the same IP address
 **NetworkPolicies** 
 - handle pod-to-pod communication rules at the network level.
 - are enforced by the Container Network Interface (CNI) plugin in your Kubernetes cluster.
-- Minikube or a basic Kubernetes setup with the default CNI (like kindnet), NetworkPolicies won't work.
--  if you're using Minikube and want to use NetworkPolicies:
-```bash
-minikube start --cni calico        # calico Common CNI plugins that support NetworkPolicies
-```
 
 ---
 
@@ -81,10 +86,33 @@ sudo nano /etc/hosts
 <MINIKUBE_IP> myapp.local
 ```
 
-## 6- Verification
+----
+
+## For Testing
 ```bash
+# test ingress host
 curl http://myapp.local
 
+# test network Policy
+# 1- Create a test pod in the same namespace
+kubectl run test-pod-same-ns --image=busybox --rm -it -- /bin/sh
+
+# Test access from the same namespace: Inside the test-pod-same-ns, run
+wget -O- --timeout=2 http://myapp.local     #should success  
+
+# 2- Create a test pod in a different namespace
+kubectl create namespace test-namespace
+kubectl run test-pod-diff-ns -n test-namespace --image=busybox --rm -it -- /bin/sh
+
+# Test access from a different namespace
+wget -O- --timeout=2 http://myapp.local    #should fail
+
+```
+
+---
+
+## For troubleshooting
+```bash
 #get services
 kubectl get svc
 kubectl get ingress
