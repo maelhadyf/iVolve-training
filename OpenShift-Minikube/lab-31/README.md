@@ -54,6 +54,9 @@ sudo nano /etc/hosts
 
 ## 6- Verification
 ```bash
+
+curl $(minikube ip):<NODEPORT>  #30001
+
 # Check if the image is available in Minikube's Docker daemon
 eval $(minikube docker-env)
 docker images | grep custom-nginx
