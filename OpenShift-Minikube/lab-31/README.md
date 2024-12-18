@@ -1,5 +1,5 @@
 # Lab 31: Network Configuration
-Build a new image from Dockerfile in https://github.com/IbrahimmAdel/static-website.git  
+Build a new image from a Dockerfile
 Create a deployment using this image  
 Create a service to expose the deployment.  
 Define a network policy that allow traffic to the NGINX pods only from other pods within the same namespace.  
