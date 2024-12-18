@@ -1,6 +1,7 @@
 
 
-**Ingress**
+**Ingress**  
+
 consolidate your routing rules into a single resource as it
 can expose multiple services under the same IP address
 
