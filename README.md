@@ -15,7 +15,7 @@ Lab 17 ----> 21
 ## CI/CD with Jenkins
 Lab 22 ----> 26
 
-## Red Hat OpenShift Administration
+## OpenShift Minikube
 Lab 27 ----> 35
 
 ---
