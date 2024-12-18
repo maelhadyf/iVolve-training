@@ -27,7 +27,7 @@ Make a Comparison between PV, PVC, and StorageClass.
 | **Here's a simple analogy:**                                                        	|                                                          	|                                         	|
 | - StorageClass is like a hotel room type (e.g., standard, deluxe, suite)            	|                                                          	|                                         	|
 | - PV is like the actual hotel room                                                  	|                                                          	|                                         	|
-| - PVC is like a room reservation                                                    	|                                                          	|                                         	|                                                                                                                                                                                                  |
+| - PVC is like a room reservation
 
 ```
 
