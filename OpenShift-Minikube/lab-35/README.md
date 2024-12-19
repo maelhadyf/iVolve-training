@@ -10,6 +10,8 @@ Delete nginx release.
 
 Helm is the package manager for Kubernetes. Think of it like apt/yum for Kubernetes
 
+![image](https://github.com/user-attachments/assets/8ebe01b0-f8db-450a-b157-9b46be9aff13)
+
 ---
 
 ## Helm installation
