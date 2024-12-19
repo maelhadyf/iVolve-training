@@ -38,3 +38,35 @@ What is the differnet between  readiness & liveness , init & sidecar container.
 
 ---
 
+## 🏃‍♂️ Running
+```bash
+kubectl apply -f jenkins-deployment.yaml
+kubectl apply -f jenkins-service.yaml
+```
+
+---
+
+## 🧪 Testing
+```bash
+# Check the status of the pods
+kubectl get pods
+
+# View the details of the Jenkins pod
+# In the output of the describe command, look for the "Events" section. You should see that the init container
+kubectl describe pod <jenkins-pod-name>
+
+# to get the URL
+minikube service jenkins --url
+```
+
+---
+
+## 📄 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## ✍️ Author
+**King Memo**
+
+## 🙏 Thank You!
+Thank you for using this project. Your support and feedback are greatly appreciated!
+
