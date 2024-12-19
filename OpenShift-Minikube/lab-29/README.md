@@ -14,10 +14,10 @@ Roll back NGINX deployment to the previous image version and Monitor pod status 
 save the next demo script:
 ```bash
 # Make it executable
-chmod +x rolling-demo.sh
+chmod +x updating_rolling_back_demo.sh
 
 # Run the script
-./rolling-demo.sh
+./updating_rolling_back_demo.sh
 ```
 
 ```bash
