@@ -35,7 +35,7 @@ service:
 
 ```bash
 # 3- Deploy the Helm chart
-helm install my-nginx nginx-chart
+helm install my-nginx .
 
 # 4- Access the Nginx server            If using Minikube, use this command instead:
 minikube service my-nginx-nginx-chart
