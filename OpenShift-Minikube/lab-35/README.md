@@ -1,7 +1,10 @@
+# Lab 35: Helm Chart Deployment
 
+Create a new Helm chart for Nginx. Deploy the Helm chart and verify the deployment.  
+Access the Nginx server.  
+Delete nginx release.  
 
-
-
+---
 
 ## Helm installation
 ```bash
