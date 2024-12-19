@@ -9,7 +9,7 @@ Exec into the MySQL pod and verify the Database configurations.
 
 ---
 
-## RUN
+## 🏃‍♂️ Running
 ```bash
 # Apply the configurations
 kubectl apply -f namespace-quota.yaml
@@ -18,7 +18,9 @@ kubectl apply -f mysql-secret.yaml
 kubectl apply -f mysql-deployment.yaml
 ```
 
-## To verify the setup:
+---
+
+## 🧪 Testing
 ```bash
 # 1- Check if the pod is running:
 kubectl get pods -n ivolve
@@ -37,7 +39,9 @@ SELECT User FROM mysql.user;
 kubectl describe resourcequota ivolve-quota -n ivolve    # This will show you how much of the quota is being used by the MySQL deployment.
 ```
 
-## clean up
+---
+
+## 🧹 Cleanup
 ```bash
 kubectl delete namespace ivolve
 ```
