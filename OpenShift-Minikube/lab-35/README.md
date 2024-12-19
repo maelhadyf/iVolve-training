@@ -24,7 +24,7 @@ rm get_helm.sh
 ## 🏃‍♂️ Running
 ```bash
 # 1- create a new Helm chart
-helm create nginx-chart .
+helm create nginx-chart
 
 # 2- Navigate to the chart directory and modify the values.yaml file:
 cd nginx-chart
