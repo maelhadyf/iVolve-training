@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      initContainers:
+      - name: init-sleep
+        image: busybox
+        command: ['sh', '-c', 'sleep 10']
+      containers:
+      - name: jenkins
+        image: jenkins/jenkins:lts
+        ports:
+        - containerPort: 8080
+        - containerPort: 50000
+        readinessProbe:
+          httpGet:
+            path: /login
+            port: 8080
+          periodSeconds: 10
+          failureThreshold: 3
+          initialDelaySeconds: 60
+        livenessProbe:
+          httpGet:
+            path: /login
+            port: 8080
+          periodSeconds: 10
+          failureThreshold: 5
+          initialDelaySeconds: 60
