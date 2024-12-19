@@ -24,17 +24,17 @@ rm get_helm.sh
 ## 🏃‍♂️ Running
 ```bash
 # 1- create a new Helm chart
-helm create nginx-chart
+helm create nginx-chart .
 
 # 2- Navigate to the chart directory and modify the values.yaml file:
 cd nginx-chart
-nano values.yaml    # make  tag: "stable" , and save
+nano values.yaml
 ```
 change only tag, service type
 ```yaml
 image:
   repository: nginx
-  tag: "stable"
+  tag: "stable"        # make tag stable
   pullPolicy: IfNotPresent
 
 service:
