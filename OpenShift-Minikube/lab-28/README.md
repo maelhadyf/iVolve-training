@@ -1,6 +1,6 @@
 
 
-
+---
 
 ## Comparison between Deployment and StatefulSet
 
@@ -27,3 +27,41 @@
 > **Note:**  
 > In a StatefulSet, typically the Pod with ordinal 0 (the first Pod) is designated as the master/primary.  
 > This is a common pattern in distributed systems, particularly databases.
+
+---
+
+## 🏃‍♂️ Running
+```bash
+# edit pass in mysql-secret.yaml
+echo -n 'yourpassword' | base64    
+
+# apply all resources in current dir
+kubectl apply -f .
+```
+
+---
+
+## 🧪 Testing
+```bash
+# retrieve info about all the resources in the current namespace
+kubectl get all
+```
+
+---
+
+## 🧹 Cleanup
+```bash
+# delete all resources in current dir
+kubectl delete -f .
+```
+
+---
+
+## 📄 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## ✍️ Author
+**King Memo**
+
+## 🙏 Thank You!
+Thank you for using this project. Your support and feedback are greatly appreciated!
