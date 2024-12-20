@@ -75,3 +75,33 @@ Make a Comparison between service account - role & role binding - and cluster ro
 | **Example Use**             | Assigning an identity to a pod                     | Granting access to resources (pods, services) in a namespace | Granting access to resources (nodes, namespaces) cluster-wide |
 
 ---
+
+## 🏃‍♂️ Running
+```bash
+kubectl apply -f serviceaccount.yaml
+
+kubectl apply -f role-pod-reader.yaml
+
+kubectl apply -f rolebinding-pod-reader.yaml
+
+# find the name of the Secret associated with the Service Account:
+# This will return the name of the Secret, for example, pod-reader-sa-token-xxxxx
+kubectl get serviceaccount pod-reader-sa -o jsonpath='{.secrets[0].name}' -n default
+
+# Now, get the token from the Secret:
+# Replace pod-reader-sa-token-xxxxx with the actual token secret name obtained in the previous step.
+# The base64 --decode command decodes the token into its readable form.
+kubectl get secret pod-reader-sa-token-xxxxx -o jsonpath='{.data.token}' -n default | base64 --decode
+
+```
+
+---
+
+## 📄 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## ✍️ Author
+**King Memo**
+
+## 🙏 Thank You!
+Thank you for using this project. Your support and feedback are greatly appreciated!
