@@ -1,4 +1,7 @@
-
+# Lab 28: Deployment vs. StatefulSet
+Make a Comparison between Deployment and StatefulSet.  
+Create a YAML file for a MySQL StatefulSet configuration.   
+Write a YAML file to define a service for the MySQL StatefulSet.  
 
 ---
 
