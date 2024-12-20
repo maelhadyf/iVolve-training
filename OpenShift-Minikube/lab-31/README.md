@@ -33,13 +33,14 @@ can expose multiple services under the same IP address
 
 ---
 
+## 🏃‍♂️ Running
 
-## 1- Build the Docker image with your Dockerfile:
+### 1- Build the Docker image with your Dockerfile:
 ```bash
 docker build -t custom-nginx:latest .
 ```
 
-## 2- To use local image Not pull from outside
+### 2- To use local image Not pull from outside
 1- Using Minikube's Docker daemon (Recommended Approach):
 ```bash
 # Save your local image to a tar file
@@ -64,12 +65,12 @@ Update the deployment to use the registry image:
 image: localhost:5000/custom-nginx:latest
 ```
 
-## 3- Enable Nginx Ingress Controller in Minikube:
+### 3- Enable Nginx Ingress Controller in Minikube:
 ```bash
 minikube addons enable ingress
 ```
 
-## 4- Apply all the configurations:
+### 4- Apply all the configurations:
 ```bash
 kubectl apply -f nginx-deployment.yaml
 kubectl apply -f nginx-service.yaml
@@ -77,7 +78,7 @@ kubectl apply -f nginx-network-policy.yaml
 kubectl apply -f nginx-ingress.yaml
 ```
 
-## 5- Update `/etc/hosts` (you'll need sudo privileges):
+### 5- Update `/etc/hosts` (you'll need sudo privileges):
 ```bash
 # Add this line to /etc/hosts (replace <MINIKUBE_IP> with actual IP)
 sudo nano /etc/hosts
@@ -88,7 +89,7 @@ sudo nano /etc/hosts
 
 ----
 
-## For Testing
+## 🧪 Testing
 ```bash
 # test ingress host
 curl http://myapp.local
@@ -111,7 +112,7 @@ wget -O- --timeout=2 http://myapp.local    #should fail
 
 ---
 
-## For troubleshooting
+## 🛠️ Troubleshooting
 ```bash
 #get services
 kubectl get svc
